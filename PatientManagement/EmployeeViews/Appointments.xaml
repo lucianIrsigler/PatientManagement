@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:menus="clr-namespace:PatientManagement.menus"
+      xmlns:ScottPlot="clr-namespace:ScottPlot.WPF;assembly=ScottPlot.WPF"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Appointments">
@@ -74,7 +75,7 @@
 
                     <Grid Grid.Row="1" Grid.Column="1">
                         <Label Content="Consultation Data" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="16" FontFamily="Arial"></Label>
-
+                        <ScottPlot:WpfPlot x:Name="WpfPlot1" />
                     </Grid>
                 </Grid>
 

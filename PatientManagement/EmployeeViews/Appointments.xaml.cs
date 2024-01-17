@@ -23,6 +23,15 @@ namespace PatientManagement.EmployeeViews
         public Appointments()
         {
             InitializeComponent();
+
+            Loaded += (s, e) =>
+            {
+                double[] dataX = { 1, 2, 3, 4, 5 };
+                double[] dataY = { 1, 4, 9, 16, 25 };
+                WpfPlot1.Plot.Add.Scatter(dataX, dataY);
+                WpfPlot1.Refresh();
+            };
+
         }
 
         private void Create_Consultation(object sender, RoutedEventArgs e)
