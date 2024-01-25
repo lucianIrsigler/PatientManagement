@@ -1,15 +1,40 @@
 ﻿using PatientManagement.Objects;
+using Npgsql;
+using System.Data;
 
 namespace PatientManagement.Database
 {
     internal class PatientDatabaseHandler : DatabaseOperator<Patient>
     {
+
+        private DatabaseConnection connection;
+
+        public PatientDatabaseHandler()
+        {
+            connection = new DatabaseConnection();
+        }
+
         public void DeleteRecord(Patient entity)
         {
         }
 
-        public void GetRecord(Patient entity)
+        public DataTable GetRecord(Patient entity)
         {
+            using (NpgsqlConnection conn = connection.GetConnection())
+            {
+                conn.Open();
+
+                using (NpgsqlCommand command = new NpgsqlCommand("SELECT * FROM Patient where " +
+                    "PatientID == " + entity.getID(), conn))
+                {
+                    using (NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(command))
+                    {
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+                        return dataTable;
+                    }
+                }
+            }
         }
 
         public void InsertRecord(Patient entity)

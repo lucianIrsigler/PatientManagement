@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PatientManagement
+namespace PatientManagement.AdminViews
 {
     /// <summary>
-    /// Interaction logic for AdminMainPage.xaml
+    /// Interaction logic for AdminHome.xaml
     /// </summary>
-    public partial class AdminMainPage : Page
+    public partial class AdminHome : Page
     {
-        public AdminMainPage()
+        public AdminHome()
         {
             InitializeComponent();
         }

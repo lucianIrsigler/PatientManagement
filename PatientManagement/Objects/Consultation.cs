@@ -19,7 +19,7 @@ namespace PatientManagement
         /// 
         /// </summary>
         /// <returns></returns>
-        private string getID()
+        public string getID()
         {
             return _consultationID;
         }

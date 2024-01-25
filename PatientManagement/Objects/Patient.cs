@@ -46,7 +46,7 @@
             Email = email;
         }
 
-        private string getID()
+        public string getID()
         {
             return _patientID;
         }

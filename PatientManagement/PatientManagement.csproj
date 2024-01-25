@@ -11,8 +11,4 @@
     <PackageReference Include="ScottPlot.WPF" Version="5.0.15" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="AdminViews\" />
-  </ItemGroup>
-
 </Project>

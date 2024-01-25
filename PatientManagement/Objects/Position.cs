@@ -6,7 +6,7 @@
         private string positionID { get; set; }
         public string positionName { get; set; }
 
-        private string getID()
+        public string getID()
         {
             return positionID;
         }
