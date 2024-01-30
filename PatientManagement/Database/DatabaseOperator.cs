@@ -9,5 +9,7 @@ namespace PatientManagement.Database
         public void UpdateRecord(T entity);
         public void DeleteRecord(T entity);
         public DataTable GetRecord(T entity);
+
+        public DataTable GetAll();
     }
 }

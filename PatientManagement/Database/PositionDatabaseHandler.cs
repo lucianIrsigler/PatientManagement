@@ -1,11 +1,6 @@
 ﻿using Npgsql;
 using PatientManagement.Objects;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PatientManagement.Database
 {
@@ -22,6 +17,24 @@ namespace PatientManagement.Database
         public void DeleteRecord(Position entity)
         {
             
+        }
+
+        public DataTable GetAll()
+        {
+            using (NpgsqlConnection conn = connection.GetConnection())
+            {
+                conn.Open();
+
+                using (NpgsqlCommand command = new NpgsqlCommand("SELECT * FROM Position", conn))
+                {
+                    using (NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(command))
+                    {
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+                        return dataTable;
+                    }
+                }
+            }
         }
 
         public DataTable GetRecord(Position entity)

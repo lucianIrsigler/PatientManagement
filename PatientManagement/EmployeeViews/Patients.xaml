@@ -5,7 +5,8 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:menus="clr-namespace:PatientManagement.menus"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="690" d:DesignWidth="1424"
+      MinWidth="1402"
       Title="Patients">
 
     <Grid>
@@ -24,7 +25,19 @@
             </Grid.ColumnDefinitions>
 
             <Grid Grid.Column="0">
-                <menus:EmployeeSubMenu></menus:EmployeeSubMenu>
+                <Grid>
+                    <Border BorderBrush="Black" BorderThickness="0 0 2 0">
+                        <Grid Margin="5,0,5,0">
+                            <StackPanel>
+                                <Button Name="HomeBtn" Content="Home" Margin="0,5,0,5" FontSize="12pt"></Button>
+                                <Button Name="PatientsBtn" Content="Patients" Margin="0,5,0,5" FontSize="12pt"></Button>
+                                <Button Name="DoctorsBtn" Content="Doctors" Margin="0,5,0,5" FontSize="12pt"></Button>
+                                <Button Name="AppointmentsBtn" Content="Appointments" Margin="0,5,0,5" FontSize="12pt"></Button>
+                                <Button Name="LogoutBtn" Content="Logout" Margin="0,5,0,5" FontSize="12pt"></Button>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </Grid>
             </Grid>
 
             <Grid Grid.Column="1">
@@ -33,8 +46,32 @@
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <Grid Grid.Row="0">
-                    <TextBox Margin="120,20,124,20" Text="Search for patient" FontFamily="Arial" Height="16" VerticalAlignment="Top" ></TextBox>
+                <Grid Grid.Row="0" Margin="0,0,0,5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="85*" MinWidth="529"></ColumnDefinition>
+                        <ColumnDefinition Width="15*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                        <TextBox Name ="query" Text="Search for patient" 
+                             FontFamily="Arial" Height="22" VerticalAlignment="Center"
+                             HorizontalAlignment="Center" FontSize="16" Width="989" />
+                    
+                    <Button Grid.Column="1" Name="Search" Content="Search"
+                             VerticalAlignment="Center" HorizontalAlignment="Center" 
+                            Height="34" Width="74" Click="Search_Click"
+                            >
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="0"
+                            CornerRadius="10">
+                                    <!-- Adjust the CornerRadius value as needed -->
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
                 </Grid>
 
                 <Grid Grid.Row="1">
@@ -43,14 +80,14 @@
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
 
-                    <Grid Grid.Column="0">
-                        <Label Content="Patient profile" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="16" FontFamily="Arial" ></Label>
-                    </Grid>
-                    
-                    <Grid Grid.Column="1">
+                    <Grid Grid.Column="0" Name="results">
                         <Label Content="Search results" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="16" FontFamily="Arial" ></Label>
                     </Grid>
-                    
+
+                    <Grid Grid.Column="1">
+                        <Label Content="Patient Profile" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="16" FontFamily="Arial" ></Label>
+                    </Grid>
+
                 </Grid>
             </Grid>
         </Grid>

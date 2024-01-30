@@ -23,6 +23,47 @@ namespace PatientManagement.EmployeeViews
         public Doctors()
         {
             InitializeComponent();
+
+            Button homeButton = (Button)FindName("HomeBtn");
+            homeButton.Click += (s, e) =>
+            {
+                NavigationService.Navigate(new EmployeeHome());
+            };
+
+
+            Button patientButton = (Button)FindName("PatientsBtn");
+            patientButton.Click += (s, e) =>
+            {
+                NavigationService.Navigate(new Patients());
+            };
+
+
+            Button doctorButton = (Button)FindName("DoctorsBtn");
+            doctorButton.Click += (s, e) =>
+            {
+                NavigationService.Navigate(new Doctors());
+            };
+
+
+            Button appointmentsButton = (Button)FindName("AppointmentsBtn");
+            appointmentsButton.Click += (s, e) =>
+            {
+                NavigationService.Navigate(new Appointments());
+            };
+
+
+            Button logoutButton = (Button)FindName("LogoutBtn");
+            logoutButton.Click += (s, e) =>
+            {
+                MessageBoxResult result = MessageBox.Show("Do you want to logout",
+                    "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+                if (result == MessageBoxResult.Yes)
+                {
+                    NavigationService.Navigate(new Login());
+                }
+            };
+
         }
     }
 }

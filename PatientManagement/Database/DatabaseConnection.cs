@@ -6,7 +6,7 @@ namespace PatientManagement.Database
     {
 
         private readonly string _databaseConnectionInfo =
-            "Host=localhost;Username=postgresql;Password=U3a4^5F2fTkO;Database=PatientManagement";
+            "Host=localhost;Username=management;Password=management;Database=PatientManagement";
 
         public string getDatabaseInfo()
         {

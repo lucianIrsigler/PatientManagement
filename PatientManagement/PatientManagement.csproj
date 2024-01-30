@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Npgsql" Version="8.0.1" />
     <PackageReference Include="ScottPlot.WPF" Version="5.0.15" />
   </ItemGroup>
 

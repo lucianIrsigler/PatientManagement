@@ -18,6 +18,11 @@ namespace PatientManagement.Database
         {
         }
 
+        public DataTable GetAll()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public DataTable GetRecord(Admin entity)
         {
             using (NpgsqlConnection conn = connection.GetConnection())

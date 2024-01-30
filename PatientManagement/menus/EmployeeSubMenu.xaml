@@ -9,11 +9,11 @@
         <Border BorderBrush="Black" BorderThickness="0 0 2 0">
             <Grid Margin="5,0,5,0">
                 <StackPanel>
-                    <Button Content="Home" Margin="0,5,0,5" FontSize="12pt" Click="Navigate_Home"></Button>
-                    <Button Content="Patients" Margin="0,5,0,5" FontSize="12pt" Click="Navigate_Patients"></Button>
-                    <Button Content="Doctors" Margin="0,5,0,5" FontSize="12pt" Click="Navigate_Doctors"></Button>
-                    <Button Content="Appointments" Margin="0,5,0,5" FontSize="12pt" Click="Navigate_Appointments"></Button>
-                    <Button Content="Logout" Margin="0,5,0,5" FontSize="12pt" Click="Logout"></Button>
+                    <Button Name="Home" Content="Home" Margin="0,5,0,5" FontSize="12pt"></Button>
+                    <Button Name="Patients" Content="Patients" Margin="0,5,0,5" FontSize="12pt"></Button>
+                    <Button Name="Doctors" Content="Doctors" Margin="0,5,0,5" FontSize="12pt"></Button>
+                    <Button Name="Appointments" Content="Appointments" Margin="0,5,0,5" FontSize="12pt"></Button>
+                    <Button Name="Logout" Content="Logout" Margin="0,5,0,5" FontSize="12pt"></Button>
                 </StackPanel>
             </Grid>
         </Border>

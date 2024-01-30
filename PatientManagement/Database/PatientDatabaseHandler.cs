@@ -18,14 +18,51 @@ namespace PatientManagement.Database
         {
         }
 
+        public DataTable GetAll()
+        {
+            using(NpgsqlConnection conn = connection.GetConnection())
+            {
+                conn.Open();
+
+                using (NpgsqlCommand command = new NpgsqlCommand("SELECT * FROM \"Patient\"", conn))
+                {
+                    using (NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(command))
+                    {
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+                        return dataTable;
+                    }
+                }
+            }
+        }
+
         public DataTable GetRecord(Patient entity)
         {
             using (NpgsqlConnection conn = connection.GetConnection())
             {
                 conn.Open();
 
-                using (NpgsqlCommand command = new NpgsqlCommand("SELECT * FROM Patient where " +
+                using (NpgsqlCommand command = new NpgsqlCommand("SELECT * FROM \"Patient\" where " +
                     "PatientID == " + entity.getID(), conn))
+                {
+                    using (NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(command))
+                    {
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+                        return dataTable;
+                    }
+                }
+            }
+        }
+
+        public DataTable GetRecords(string key, string value)
+        {
+            using (NpgsqlConnection conn = connection.GetConnection())
+            {
+                conn.Open();
+
+                using (NpgsqlCommand command = new NpgsqlCommand("SELECT * FROM \"Patient\" where \"" +
+                    key+"\" like '" + value + "%'", conn))
                 {
                     using (NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(command))
                     {

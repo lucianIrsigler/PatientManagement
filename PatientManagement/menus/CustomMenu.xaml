@@ -6,7 +6,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Menu>
+        <Menu FontSize="16">
             <MenuItem Header="General">
                 <MenuItem Header="Log out"></MenuItem>
             </MenuItem>

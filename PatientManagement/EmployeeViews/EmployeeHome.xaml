@@ -26,7 +26,19 @@
 
 
             <Grid Grid.Column="0">
-                <menus:EmployeeSubMenu></menus:EmployeeSubMenu>
+                <Grid>
+                    <Border BorderBrush="Black" BorderThickness="0 0 2 0">
+                        <Grid Margin="5,0,5,0">
+                            <StackPanel>
+                                <Button Name="HomeBtn" Content="Home" Margin="0,5,0,5" FontSize="12pt"></Button>
+                                <Button Name="PatientsBtn" Content="Patients" Margin="0,5,0,5" FontSize="12pt"></Button>
+                                <Button Name="DoctorsBtn" Content="Doctors" Margin="0,5,0,5" FontSize="12pt"></Button>
+                                <Button Name="AppointmentsBtn" Content="Appointments" Margin="0,5,0,5" FontSize="12pt"></Button>
+                                <Button Name="LogoutBtn" Content="Logout" Margin="0,5,0,5" FontSize="12pt"></Button>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </Grid>
             </Grid>
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
@@ -44,8 +56,11 @@
                     </Grid.ColumnDefinitions>
                     
                     <Grid Grid.Column="0">
-                        <Label Content="Today's Patients" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="16" FontFamily="Arial" FontWeight="Bold" Margin="0,9,0,0"></Label>
-                        <DataGrid Margin="21,42,21,0"></DataGrid>
+                        <Label Content="Today's Patients" HorizontalAlignment="Center" 
+                               VerticalAlignment="Top" FontSize="16" FontFamily="Arial" FontWeight="Bold" Margin="0,9,0,0"></Label>
+                        <DataGrid Margin="21,42,21,0" Name="patients"
+                                  IsReadOnly="True" FontSize="16"
+                                  ></DataGrid>
                     </Grid>
 
                     <Grid Grid.Column="1">

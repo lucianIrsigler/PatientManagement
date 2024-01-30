@@ -23,6 +23,11 @@ namespace PatientManagement.Database
             
         }
 
+        public DataTable GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
         public DataTable GetRecord(Employee entity)
         {
             using (NpgsqlConnection conn = connection.GetConnection())
