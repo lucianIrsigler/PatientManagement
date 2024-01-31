@@ -1,6 +1,7 @@
 ﻿# Purpose of the project
 The purpose of the project is to create a basic patient management system. The project's aim is to improve my usage
 of PostgreSQL and wpf C#.
+**It is still a work in progress**
 
 # The project outline
 The project idea is from w3schools.
@@ -35,7 +36,32 @@ A employee has the capability to:
 The database manager used is PostgreSQL.
 
 ## The class diagram
-![Class diagram](https://github.com/lucianIrsigler/PatientManagement/blob/master/images/classdiagram.PNG)
+![Class diagram](https://github.com/lucianIrsigler/PatientManagement/blob/master/images/classdiagram.png)
 
 ## ERD
-![Entity relation diagram](https://github.com/lucianIrsigler/PatientManagement/blob/master/images/erd.PNG)
+![Entity relation diagram](https://github.com/lucianIrsigler/PatientManagement/blob/master/images/erd.png)
+
+There is inheritence between the entities of Employee,Admin,Worker,and Doctor, due to the fact that each require the same
+basic data(EmployeeID,StartingDate...). Thus to simplify the ERD, I used inheritence.
+
+# Human views
+## Employee View
+The employee home screen looks like this:
+![Home screen](https://github.com/lucianIrsigler/PatientManagement/blob/master/images/employee0.png)
+
+Majority of the screens look similar to this.DataGrids are used to store the rows that are retrieved from the 
+database
+
+# Programming and issues
+I utilized custom UserControls to provide abstraction for the xaml files.
+
+However, I encountered an issue with one of the menus. If you look at the Employee Home Screen, you will notice a 
+menu on the left hand side. This menu had to be created with a stackpanel with buttons to get what I wanted.
+
+The issue was with binding the on click handlers to the buttons. I tried to think of the most programmatic approach to
+the issue but fell short. I had to thus then come up a bandaid fix where I pasted the onclick handler functionility into
+each of the WPF page's constructor.
+
+It did work and since the code for the onclick handlers shouldn't change, then its a suitable solution at the moment
+
+
