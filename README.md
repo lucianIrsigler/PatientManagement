@@ -62,6 +62,14 @@ The issue was with binding the on click handlers to the buttons. I tried to thin
 the issue but fell short. I had to thus then come up a bandaid fix where I pasted the onclick handler functionility into
 each of the WPF page's constructor.
 
-It did work and since the code for the onclick handlers shouldn't change, then its a suitable solution at the moment
+It did work and since the code for the onclick handlers shouldn't change, then its a suitable solution at the moment.
 
-
+# Skills practiced
+This project allowed me to practice on:
+- Seperating related files into different folders
+- Custom UserControls and implementing them into other xaml files and fixing issues with them
+- ERD/class diagram practice
+- Designing layouts using xaml
+- Usage of DataGrids and DataTable sorting to retrieve rows
+- Usage of the NuGet package "Npgsql"
+- Inheritence with C#
