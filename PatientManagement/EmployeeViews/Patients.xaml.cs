@@ -104,6 +104,7 @@ namespace PatientManagement.EmployeeViews
             Label label= new Label();
             label.Content = "Patient name:";
 
+
         }
     }
 }
