@@ -1,6 +1,6 @@
 ﻿# Purpose of the project
 The purpose of the project is to create a basic patient management system. The project's aim is to improve my usage
-of postgreSQL and wpf.
+of PostgreSQL and wpf C#.
 
 # The project outline
 The project idea is from w3schools.
@@ -32,3 +32,10 @@ A employee has the capability to:
 - Create/Update/Delete/Remove consultations
 
 # Database design
+The database manager used is PostgreSQL.
+
+## The class diagram
+![Class diagram](https://github.com/lucianIrsigler/PatientManagement/blob/master/images/classdiagram.PNG)
+
+## ERD
+![Entity relation diagram](https://github.com/lucianIrsigler/PatientManagement/blob/master/images/erd.PNG)
